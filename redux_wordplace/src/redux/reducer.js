@@ -3,8 +3,9 @@
     manage state data
 */
 import { INCREMENT, DECREMENT } from './action-types'
+import { combineReducers } from 'redux'
 
-export default function count (state=1, action) {
+function count (state=1, action) {
     console.log('count()', state, action)
     switch (action.type) {
         case INCREMENT:
@@ -15,3 +16,21 @@ export default function count (state=1, action) {
             return state
     }
 }
+
+const initUser = {}
+/* 
+    管理User状态的reducer
+*/
+function user(state = initUser, action) {
+    switch(action.type) {
+        default:
+            return state
+    }
+}
+/* 
+    combineReducers函数: 接受包含所有reducer函数的对象,返回一个新的reducer
+*/
+export default combineReducers({
+    count: count,
+    user: user
+})

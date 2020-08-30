@@ -9,6 +9,6 @@ connect()返回的函数是一个高阶组件,接受一个UI组件,生成一个�
 */
 
 export default connect(
-    state => ({count: state.count}),
+    state => ({count: state}),
     {increment, decrement, incrementAsync}
 )(Counter)

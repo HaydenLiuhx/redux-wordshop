@@ -10,7 +10,7 @@ connect()返回的函数是一个高阶组件,接受一个UI组件,生成一个�
 */
 function mapStateToProps(state) {
     return {
-        count: state
+        count: state.count
     }
 }
 function mapDispatchToProps(dispatch) {
